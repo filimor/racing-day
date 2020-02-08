@@ -1,12 +1,13 @@
-﻿using System;
+﻿using RacingDay.Properties;
+using System;
 using System.Windows.Forms;
 
 namespace RacingDay
 {
     public partial class FormRacingDay : Form
     {
-        private Guy[] guys = new Guy[3];
-        private GreyHound[] greyHounds = new GreyHound[4];
+        private readonly Guy[] guys = new Guy[3];
+        private readonly GreyHound[] greyHounds = new GreyHound[4];
 
         public FormRacingDay()
         {
@@ -30,7 +31,7 @@ namespace RacingDay
             {
                 if (guy.MyRadioButton.Checked && !guy.PlaceBet((int)nudAmount.Value, (int)nudDog.Value))
                 {
-                    MessageBox.Show($"{guy.Name} não tem dinheiro o suficiente!", "Aposta não realizada", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show($"{guy.Name} {Resources.notEnough}", Resources.notPlaced, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 guy.UpdateLabels();
             }
@@ -64,7 +65,8 @@ namespace RacingDay
         {
             if (guys[0].MyBet.Amount == 0 && guys[1].MyBet.Amount == 0 && guys[2].MyBet.Amount == 0)
             {
-                MessageBox.Show("Ninguém apostou!", "Sem apostadores", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(Resources.noBet, Resources.noBettors, MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
                 return;
             }
 
@@ -90,7 +92,8 @@ namespace RacingDay
                 bettor.UpdateLabels();
             }
 
-            MessageBox.Show($"O cão {winner} ganhou a corrida!", "Temos um vencedor!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show($"{Resources.theDog} {winner} {Resources.wonRace}", Resources.gotWinner,
+                MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             btnRun.Enabled = true;
             btnBet.Enabled = true;
