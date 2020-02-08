@@ -160,4 +160,13 @@
   <data name="wonRace" xml:space="preserve">
     <value>won the race!</value>
   </data>
+  <data name="guy1" xml:space="preserve">
+    <value>John</value>
+  </data>
+  <data name="guy2" xml:space="preserve">
+    <value>Bob</value>
+  </data>
+  <data name="guy3" xml:space="preserve">
+    <value>Alfred</value>
+  </data>
 </root>

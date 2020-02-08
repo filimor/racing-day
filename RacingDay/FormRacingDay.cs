@@ -13,9 +13,9 @@ namespace RacingDay
         {
             InitializeComponent();
 
-            guys[0] = new Guy("João", 50, rdoJoao, lblJoao);
-            guys[1] = new Guy("Beto", 75, rdoBeto, lblBeto);
-            guys[2] = new Guy("Alfredo", 45, rdoAlfredo, lblAlfredo);
+            guys[0] = new Guy(Resources.guy1, 50, rdoJoao, lblJoao);
+            guys[1] = new Guy(Resources.guy2, 75, rdoBeto, lblBeto);
+            guys[2] = new Guy(Resources.guy3, 45, rdoAlfredo, lblAlfredo);
 
             int startPos = picRaceTrack.Left + 12;
 
@@ -31,7 +31,8 @@ namespace RacingDay
             {
                 if (guy.MyRadioButton.Checked && !guy.PlaceBet((int)nudAmount.Value, (int)nudDog.Value))
                 {
-                    MessageBox.Show($"{guy.Name} {Resources.notEnough}", Resources.notPlaced, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show($"{guy.Name} {Resources.notEnough}", Resources.notPlaced,
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 guy.UpdateLabels();
             }

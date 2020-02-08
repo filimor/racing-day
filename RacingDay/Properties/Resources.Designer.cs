@@ -116,6 +116,33 @@ namespace RacingDay.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to John.
+        /// </summary>
+        internal static string guy1 {
+            get {
+                return ResourceManager.GetString("guy1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Bob.
+        /// </summary>
+        internal static string guy2 {
+            get {
+                return ResourceManager.GetString("guy2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Alfred.
+        /// </summary>
+        internal static string guy3 {
+            get {
+                return ResourceManager.GetString("guy3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to has.
         /// </summary>
         internal static string has {
